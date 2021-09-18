@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-waves.css" />
+    <link rel="stylesheet" href="/css/style-utilities.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Chen Ashkenazi</title>
+  </head>
+  <body>
+    <!--Content before waves-->
+    <div class="navbar">
+      <nav>
+        <ul class="container">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header">
+      <div class="wrapper">
+        <div class="wrapper-text">
+          <h1>Hi, my name is Chen</h1>
+          <br />
+          <h3>Computer Science Graduate</h3>
+        </div>
+      </div>
+
+      <!--Waves Container-->
+      <div>
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <!--Waves end-->
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+      <div class="h-container">
+        <h2>Android Projects</h2>
+        <div class="container projects">
+          <div class="project-box">
+            <div id="simon" class="btn">Simon Game</div>
+          </div>
+          <div class="project-box">
+            <div id="music" class="btn">Music Player</div>
+          </div>
+          <div class="project-box">
+            <div id="easy" class="btn">Easy Event</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="h-container">
+          <h2>Contact</h2>
+          <form action="https://formsubmit.co/chenashkenazi95@gmail.com" class="contact-form" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="email" name="email" class="text-box" placeholder="Email Address" required>
+              <input type="text" name="title" class="text-box" placeholder="Title" required>
+              <textarea name="message" rows="5" placeholder="Content" required></textarea>
+              <input type="submit" name="submit" class="send-btn" value="Send">
+              <script>
+                  document.querySelector('.send-btn').addEventListener('click', () => {
+                      document.querySelector('.alert-success').style.visibility = 'visible';
+                  })
+              </script>
+              <div class="alert-success">
+                  <span>Thank you!</span>
+              </div>
+
+              <!-- <div class="alert-error">
+                      <span>Something went wrong. Please try again</span>
+                  </div> -->
+              <div class="social-icons">
+                  <a href="https://www.linkedin.com/in/chen-ashkenazi-software-developer/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                  <a href="https://github.com/chenashkenazi" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+              </div>
+          </form>
+
+      </div>
+  </section>
+
+    <script src="home.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style-utilities.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <title>Chen Ashkenazi</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <nav>
+            <ul class="container">
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a href="about.html">About</a> </li>
+                <li> <a href="index.html#projects">Projects</a> </li>
+                <li> <a href="index.html#contact">Contact</a> </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Project Description -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="project-text-container">
+                    <h2 id="project-title"></h2>
+                    <script>
+                        let title = window.location.hash.slice(1);
+                        let j = 1;
+                        let character = '';
+                        while (j <= title.length) {
+                            character = title.charAt(j);
+                            if (character == character.toUpperCase()) {
+                                title = [title.slice(0, j), ' ', title.slice(j)].join('');
+                                break;
+                            }
+                            j++;
+                        }
+                        document.getElementById("project-title").innerHTML = title;
+                    </script>
+                    <p id="project-description"></p>
+                    <br>
+                    <a id="github-icon" href="https://github.com/chenashkenazi" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+                    <script>
+                        let description
+                        let githubRepo
+                        switch (title) {
+                            case 'Simon Game':
+                                description = 'A Simon Says game for Android devices. Written in Java. The game includes 3 levels in ascending difficulty, each level has 16 sub levels. First level\'s sub levels have 4 colors, the second\'s have 6 and the third\'s have 8.\nEach sub level the steps number rises. Steps chosen randomally. When winning the player gets a stars shape score determines by his performences.'
+                                githubRepo = 'https://github.com/chenashkenazi/FinalProject';
+                                break;
+                            case 'Music Player':
+                                description = 'A music player app for Android devices. Written in Java. Includes songs list management, the user can add songs as he wishes, write their name and artist, write a url and add an image from camera or from gallery. Music continues to play when leaving the app and can be controlled via notification.'
+                                githubRepo = 'https://github.com/chenashkenazi/MusicPlayer';
+                                break;
+                            case 'Easy Event':
+                                description = 'A social app that focuses on creating and sharing events. In the home page there is feed includes public events that users created. The user can choose interesred or attending. Each registered user has profile with all his personal details and friends list. All events the user created, going, went and invited are in the events page. Only registered users can create events. Database used: Firebase'
+                                githubRepo = 'https://github.com/shir-tish/EasyEvent';
+                                break;
+                            default:
+                                break;
+                        }
+                        document.getElementById('project-description').innerHTML = description
+                        document.getElementById('github-icon').href = githubRepo
+                        console.log(githubRepo)
+                    </script>
+                
+                </div>
+                <!-- Photos slider -->
+                <div class="arrows-container">
+                    <i class="fas fa-chevron-right" id="nextBtn"></i>
+                    <i class="fas fa-chevron-left" id="prevBtn"></i>
+                    <div class="slider-container">
+                        <div class="slider-slide">
+                            <script>
+                                let arr
+                                const slider = document.querySelector('.slider-slide')
+                                switch (title) {
+                                    case 'Simon Game':
+                                        arr = ["/img/simon/s6.jfif", "/img/simon/s1.jfif", "/img/simon/s2.jfif", "/img/simon/s3.jfif", "/img/simon/s4.jfif", "/img/simon/s5.jfif", "/img/simon/s6.jfif", "/img/simon/s1.jfif"]
+                                        break;
+                                    case 'Music Player':
+                                        arr = ["/img/music/m4.JPG", "/img/music/m1.JPG", "/img/music/m2.JPG", "/img/music/m3.JPG", "/img/music/m4.JPG", "/img/music/m1.JPG"]
+                                        break;
+                                    case 'Easy Event':
+                                        arr = ["/img/easy/e14.jpg", "/img/easy/e1.jpg", "/img/easy/e2.jpg", "/img/easy/e3.jpg", "/img/easy/e4.jpg", "/img/easy/e5.jpg", "/img/easy/e6.jpg", "/img/easy/e7.jpg", "/img/easy/e8.jpg", "/img/easy/e9.jpg", "/img/easy/e10.jpg",  "/img/easy/e11.jpg", "/img/easy/e12.jpg", "/img/easy/e13.jpg", "/img/easy/e14.jpg", "/img/easy/e1.jpg"]
+                                        break;
+                                    default:
+                                        break;
+                                }
+
+                                for (let k = 0; k < arr.length; k++) {
+                                    let img = document.createElement('img');
+                                    img.src = arr[k];
+                                    img.className = 'img'
+                                    if (k === 0) {
+                                        img.id = 'lastClone'
+                                    } else if (k === arr.length - 1) {
+                                        img.id = 'firstClone'
+                                    }
+                                    slider.appendChild(img)
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- YouTube Video -->
+    <section class="youtube-video">
+        <div class="container">
+            <div class="youtube">
+                <script>
+                    if (title !== 'Easy Event' && title !== 'Simon Game') {
+                        document.querySelector('.youtube-video').remove();
+                    } else {
+                        let youtubeElement = document.createElement('iframe');
+                        youtubeElement.id = 'youtube-element';
+                        youtubeElement.width = '730';
+                        youtubeElement.height = '495';
+                        if (title === 'Easy Event') {
+                            youtubeElement.src = 'https://www.youtube.com/embed/Y1iellsLYHk';
+                        } else if (title === 'Simon Game') {
+                            youtubeElement.src = 'https://www.youtube.com/embed/BTiTYBvvst8';
+                        }
+                        document.querySelector('.youtube').appendChild(youtubeElement);
+                    }    
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <script src="project.js" defer></script>
+</body>
+
+</html>
